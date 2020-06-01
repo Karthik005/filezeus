@@ -113,9 +113,9 @@ connects to server (localhost:12345) and sends commands
 based on user input *)
 let run_client () = 
   (*get list of files uploaded by client and build merkle tree*)
-  let client_index = "client_index_file.txt" in
-  let client_file_list = ref(Merkle_interface.get_file_list "client_index_file.txt") in
-  let client_root_hash = ref (let read_hash = File.read_file "client_root_hash.txt" in 
+  let client_index = "./index_files/client_index_file.txt" in
+  let client_file_list = ref(Merkle_interface.get_file_list "./index_files/client_index_file.txt") in
+  let client_root_hash = ref (let read_hash = File.read_file "./index_files/client_root_hash.txt" in 
 		match read_hash with 
 		"" ->(let ren = Merkle.hash_extract (
       		match !client_file_list with 

@@ -81,8 +81,8 @@ let remove_file fname server_file_list server_index=
 (* main server function *)
 let run_server () = 
   (*get list of files uploaded by client and build merkle tree*)
-  let server_index = "server_index_file.txt" in
-  let server_file_list = ref(Merkle_interface.get_file_list "server_index_file.txt") in
+  let server_index = "./index_files/server_index_file.txt" in
+  let server_file_list = ref(Merkle_interface.get_file_list "./index_files/server_index_file.txt") in
   let server_tree = ref (
       match !server_file_list with 
       [] -> Merkle.Leaf("","") 
